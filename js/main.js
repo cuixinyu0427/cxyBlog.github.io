@@ -813,6 +813,4 @@ $(function () {
       }
     }
   }
-  var xiaokang = new xkTool(param1,param2);
-  xiaokang.footFish();
 })
