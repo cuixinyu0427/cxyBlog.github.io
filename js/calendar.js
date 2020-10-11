@@ -22,19 +22,19 @@
         next: null
       };
       var currentLanguage = 'en';
-  
+
       initLanguage(language);
-  
+
       var settings = $.extend({}, $.fn.aCalendar.defaults, typeof calLanguages === 'undefined' ? {} : calLanguages[currentLanguage], options);
-  
+
       if (settings.root[0] !== '/') {
         settings.root = '/' + settings.root;
       }
-  
+
       if (settings.root[settings.root.length - 1] !== '/') {
         settings.root += '/';
       }
-  
+
       /**
        * Initial language.
        */
@@ -43,7 +43,7 @@
           currentLanguage = key;
         }
       }
-  
+
       /**
        * Click handler for next month arrow button.
        */
@@ -54,10 +54,10 @@
           dMonth = 0;
           dYear++;
         }
-  
+
         draw();
       };
-  
+
       /**
        * Click handler for previous month arrow button.
        */
@@ -68,10 +68,10 @@
           dMonth = 11;
           dYear--;
         }
-  
+
         draw();
       };
-  
+
       /**
        * Click handler for navigating to a month if there are posts.
        */
@@ -82,7 +82,7 @@
           draw();
         }
       }
-  
+
       /**
        * Load current month's posts.
        */
@@ -93,7 +93,7 @@
           loadPostsByMonth();
         }
       }
-  
+
       /**
        * Load all month's posts.
        */
@@ -109,7 +109,7 @@
               }
             });
           }
-  
+
           if (allPosts !== null) {
             if (parse()) {
               current.posts = allPosts[dYear + '-' + (dMonth + 1)];
@@ -117,7 +117,7 @@
           }
         }
       }
-  
+
       /**
        * Load posts by the month.
        */
@@ -131,7 +131,7 @@
             }
           });
         }
-  
+
         if (parse()) {
           $.ajax({
             url: settings.root + dYear + '-' + (dMonth + 1) + '.json',
@@ -142,7 +142,7 @@
           });
         }
       }
-  
+
       /**
        * Initial months array.
        */
@@ -152,7 +152,7 @@
           return new Date(Date.UTC(+ym[0], +ym[1] - 1));
         });
       }
-  
+
       /**
        * Parse posts month array, and set current.next and current.prev.
        *
@@ -160,18 +160,18 @@
        */
       function parse() {
         var time = Date.UTC(dYear, dMonth);
-  
+
         if (months === null || months.length === 0) {
           return false;
         }
-  
+
         //If no posts in the current month, and before (or after) the current month yet not published articles, then the response to click previous month's (or next month's) event don't need to parse months array
         if (current.posts.length === 0 && (current.prev === null && current.next !== null && current.next.getTime() > time || current.next === null && current.prev !== null && current.prev.getTime() < time)) {
           return false;
         }
-  
+
         current.posts = [];
-  
+
         for (var i = 0; i < months.length; i++) {
           var cTime = months[i].getTime();
           if (time === cTime) {
@@ -187,10 +187,10 @@
             current.next = null;
           }
         }
-  
+
         return false;
       }
-  
+
       /**
        * Format date object.
        */
@@ -199,20 +199,20 @@
           'LMM+': settings.months[date.getMonth()],
           'MM+': date.getMonth() + 1
         };
-  
+
         if (/(y+)/.test(fmt)) {
           fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
         }
-  
+
         for (var k in o) {
           if (new RegExp('(' + k + ')').test(fmt)) {
             fmt = fmt.replace(RegExp.$1, (k === 'LMM+') ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)));
           }
         }
-  
+
         return fmt;
       }
-  
+
       /**
        * Draw calendar.
        *
@@ -223,10 +223,10 @@
         if (dWeekDayOfMonthStart <= 0) {
           dWeekDayOfMonthStart = 6 - ((dWeekDayOfMonthStart + 1) * -1);
         }
-  
+
         var dLastDayOfMonth = new Date(dYear, dMonth + 1, 0).getDate();
         var dLastDayOfPreviousMonth = new Date(dYear, dMonth, 0).getDate() - dWeekDayOfMonthStart + 1;
-  
+
         var cHead = $('<div/>').addClass('cal-head');
         var cNext = $('<div/>');
         var cPrevious = $('<div/>');
@@ -242,16 +242,16 @@
             .html(simpleDateFormat(curDate, settings.titleFormat));
           cTitle.html(cTitleLink);
         }
-  
+
         cPrevious.on('click', previousMonth);
         cNext.on('click', nextMonth);
-  
+
         cHead.append(cPrevious);
         cHead.append(cTitle);
         cHead.append(cNext);
-  
+
         var cBody = $('<table/>').addClass('cal');
-  
+
         var dayOfWeek = settings.weekOffset;
         var cWeekHead = $('<thead/>');
         var cWeekHeadRow = $('<tr/>');
@@ -259,16 +259,16 @@
           if (dayOfWeek > 6) {
             dayOfWeek = 0;
           }
-  
+
           var cWeekDay = $('<th/>').attr('scope', 'col').attr('title', settings.dayOfWeek[dayOfWeek]);
           cWeekDay.html(settings.dayOfWeekShort[dayOfWeek]);
           cWeekHeadRow.append(cWeekDay);
           dayOfWeek++;
         }
-  
+
         cWeekHead.append(cWeekHeadRow);
         cBody.append(cWeekHead);
-  
+
         var cFoot = $('<tfoot/>');
         var cFootRow = $('<tr/>');
         var cPrevPosts = $('<td/>').attr('colspan', 3);
@@ -279,26 +279,26 @@
             .addClass('cal-foot')
             .attr('title', simpleDateFormat(current.prev, settings.postsMonthTip));
         }
-  
+
         if (current.next) {
           cNextPosts.html(settings.months[current.next.getMonth()] + settings.footArrows.next)
             .addClass('cal-foot')
             .attr('title', simpleDateFormat(current.next, settings.postsMonthTip));
         }
-  
+
         cPrevPosts.on('click', function() {
           toPostsMonth(current.prev);
         });
-  
+
         cNextPosts.on('click', function() {
           toPostsMonth(current.next);
         });
-  
+
         cFootRow.append(cPrevPosts);
         cFootRow.append(cPad);
         cFootRow.append(cNextPosts);
         cFoot.append(cFootRow);
-  
+
         var cMainPad = $('<tbody/>');
         var day = 1;
         var dayOfNextMonth = 1;
@@ -313,7 +313,7 @@
               if (day == dDay && nMonth == dMonth && nYear == dYear) {
                 cDay.addClass('cal-today');
               }
-  
+
               var count = {
                 num: 0,
                 keys: []
@@ -324,7 +324,7 @@
                   count.keys[count.num++] = k;
                 }
               }
-  
+
               if (count.num !== 0) {
                 var index = count.keys[0];
                 var cLink = $('<a>').attr('href', current.posts[index].link).attr('title', current.posts[index].title).html(day++);
@@ -336,30 +336,30 @@
               cDay.addClass('cal-gray');
               cDay.html(dayOfNextMonth++);
             }
-  
+
             cWeek.append(cDay);
           }
-  
+
           cMainPad.append(cWeek);
         }
-  
+
         cBody.append(cWeekHead);
         cBody.append(cFoot);
         cBody.append(cMainPad);
-  
+
         $(instance).html(cHead);
         $(instance).append(cBody);
       }
-  
+
       return draw();
     };
-  
+
     $.fn.aCalendar = function(Lang, oInit) {
       return this.each(function() {
         return aCalendar(Lang, oInit, $(this));
       });
     };
-  
+
     // plugin defaults
     $.fn.aCalendar.defaults = {
       months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -379,4 +379,3 @@
         $('#calendar').aCalendar('zh-CN');//'zh-CN'请根据自己博客的语言选择
     });
   }(jQuery));
-  
