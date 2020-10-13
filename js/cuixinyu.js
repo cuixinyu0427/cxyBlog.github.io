@@ -53,18 +53,5 @@ $(function(){
     xiaokang.footFish();
 
     xiaokang.cheatTitle(["看不见我🙈~看不见我🙈~"], ["(°ー°〃) 被发现了~"], ["https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/img/avatar.png"], ["https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/img/avatar.png"]);
-
-    daovoice('init', {
-        app_id: "cd24b2ab",
-        user_id: "NO_89757", // 必填: 该用户在您系统上的唯一ID
-        email: "daovoice@example.com", // 选填:  该用户在您系统上的主邮箱
-        name: "道客船长", // 选填: 用户名
-        signed_up: 1449821660 // 选填: 用户的注册时间，用Unix时间戳表示
-    });
-    daovoice('update');
-
-    daovoice('init', {
-        app_id: "cd24b2ab"
-    });
-    daovoice('update');
+    
 })
