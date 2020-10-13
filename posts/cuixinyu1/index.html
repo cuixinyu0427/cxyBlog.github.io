@@ -158,17 +158,17 @@ else {
 
   loadScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js', function () {
     var gitalk = new Gitalk({
-      clientID: '',
-      clientSecret: '',
-      repo: '',
-      owner: '',
-      admin: [''],
+      clientID: '98585c81192a4815b9d9',
+      clientSecret: '8870ad3dc4e7dd88762c32f4699c6cb3481fdb88',
+      repo: 'gitalk',
+      owner: 'cuixinyu0427',
+      admin: ['cuixinyu0427'],
       id: md5(decodeURI(location.pathname)),
       language: 'en',
       perPage: 10,
       distractionFreeMode: false,
       pagerDirection: 'last',
-      createIssueManually: false,
+      createIssueManually: true,
       updateCountCallback: commentCount
     })
     gitalk.render('gitalk-container')
