@@ -109,51 +109,43 @@ mc.async = true;
 mc.src = 'https://embed.widgetpack.com/widget.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
 })();
-//- 下面的那行小字 如果你不需要可以把17~21行注释掉</script><div id="copy" align="center">Rating addon based on<a herf="https://widgetpack.com/">widgetpack</a>, by<a href="https://bili33.top" target="_blank" rel="noopener">GamerNoTitle</a></div></body></html><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/cuixinyu/"><img class="next-cover" data-src="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/006.webp" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav><hr><div id="post-comment"><div class="comment-head"><div class="comment-headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Valine</span><label><input id="switch-comments-btn" type="checkbox"><span class="slider"></span></label><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div class="comments-items-1" data-name="Valine"><div class="vcomment" id="vcomment"></div><script>function loadvaline () {  
-  var requestSetting = function (from,set) {
-    var from = from
-    var setting = set.split(',').filter(function(item){
-    return from.indexOf(item) > -1
-    });
-    setting = setting.length == 0 ? from :setting;
-    return setting
-  }
-
-  var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
-  var requiredFields = requestSetting(['nick','mail'],'nick,mail')
-
-  function initValine () {
-    window.valine = new Valine({
-      el:'#vcomment',
-      appId: 'EKjUylH9GCB76iA10OpfLBbM-MdYXbMMI',
-      appKey: 'voOIFlyQzeOG3UDuSv9xQo86',
-      placeholder: '留下你的足迹吧（↑邮箱必填），你也可以在右上角切换Gitalk评论~',
-      avatar: 'monsterid',
-      meta: guestInfo,
-      pageSize: '10',
-      lang: 'zh-CN',
-      recordIP: false,
-      serverURLs: '',
-      emojiCDN: '',
-      emojiMaps: {"bili_tv_gif_黑人问号":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/黑人问号.gif","bili_tv_gif_抓狂":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/抓狂.gif","bili_tv_gif_再见":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/再见.gif","bili_tv_gif_晕":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/晕.gif","bili_tv_gif_疑问":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/疑问.gif","bili_tv_gif_斜眼笑":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/斜眼笑.gif","bili_tv_gif_笑哭":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/笑哭.gif","bili_tv_gif_无奈":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/无奈.gif","bili_tv_gif_委屈":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/委屈.gif","bili_tv_gif_微笑":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/微笑.gif","bili_tv_gif_吐血":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/吐血.gif","bili_tv_gif_偷笑":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/偷笑.gif","bili_tv_gif_思考":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/思考.gif","bili_tv_gif_睡着":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/睡着.gif","bili_tv_gif_生气":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/生气.gif","bili_tv_gif_生病":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/生病.gif","bili_tv_gif_色":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/色.gif","bili_tv_gif_亲亲":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/亲亲.gif","bili_tv_gif_呕吐":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/呕吐.gif","bili_tv_gif_难过":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/难过.gif","bili_tv_gif_腼腆":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/腼腆.gif","bili_tv_gif_流汗":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/流汗.gif","bili_tv_gif_流鼻血":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/流鼻血.gif","bili_tv_gif_困":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/困.gif","bili_tv_gif_抠鼻子":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/抠鼻子.gif","bili_tv_gif_可爱":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/可爱.gif","bili_tv_gif_惊吓":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/惊吓.gif","bili_tv_gif_坏笑":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/坏笑.gif","bili_tv_gif_害羞":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/害羞.gif","bili_tv_gif_鼓掌":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/鼓掌.gif","bili_tv_gif_尴尬":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/尴尬.gif","bili_tv_gif_发怒":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/发怒.gif","bili_tv_gif_发财":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/发财.gif","bili_tv_gif_调皮":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/调皮.gif","bili_tv_gif_点赞":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/点赞.gif","bili_tv_gif_呆":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/呆.gif","bili_tv_gif_大佬":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/大佬.gif","bili_tv_gif_大哭":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/大哭.gif","bili_tv_gif_打脸":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/打脸.gif","bili_tv_gif_馋":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/馋.gif","bili_tv_gif_闭嘴":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/闭嘴.gif","bili_tv_gif_鄙视":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/鄙视.gif","bili_tv_gif_白眼":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/白眼.gif","bili_tv_gif_doge":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/doge.gif","bilibili_热词系列_“狼火”":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E2%80%9C%E7%8B%BC%E7%81%AB%E2%80%9D.png","bilibili_热词系列_知识增加":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%9F%A5%E8%AF%86%E5%A2%9E%E5%8A%A0.png","bilibili_热词系列_张三":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%BC%A0%E4%B8%89.png","bilibili_热词系列_有内味了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%9C%89%E5%86%85%E5%91%B3%E4%BA%86.jpg","bilibili_热词系列_我裂开了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%88%91%E8%A3%82%E5%BC%80%E4%BA%86.png","bilibili_热词系列_我哭了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%88%91%E5%93%AD%E4%BA%86.jpg","bilibili_热词系列_问号":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E9%97%AE%E5%8F%B7.png","bilibili_热词系列_危":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%8D%B1.jpg","bilibili_热词系列_你细品":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E4%BD%A0%E7%BB%86%E5%93%81.jpg","bilibili_热词系列_猛男必看":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%8C%9B%E7%94%B7%E5%BF%85%E7%9C%8B.jpg","bilibili_热词系列_害":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%AE%B3.jpg","bilibili_热词系列_咕咕":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%92%95%E5%92%95.jpg","bilibili_热词系列_递话筒":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E9%80%92%E8%AF%9D%E7%AD%92.png","bilibili_热词系列_标准结局":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%A0%87%E5%87%86%E7%BB%93%E5%B1%80.png","bilibili_热词系列_爱了爱了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%88%B1%E4%BA%86%E7%88%B1%E4%BA%86.png","bilibili_热词系列_知识盲区":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%9F%A5%E8%AF%86%E7%9B%B2%E5%8C%BA.png","bilibili_热词系列_镇站之宝":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E9%95%87%E7%AB%99%E4%B9%8B%E5%AE%9D.png","bilibili_热词系列_真香":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%9C%9F%E9%A6%99.png","bilibili_热词系列_有生之年":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%9C%89%E7%94%9F%E4%B9%8B%E5%B9%B4.png","bilibili_热词系列_爷关更":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%88%B7%E5%85%B3%E6%9B%B4.png","bilibili_热词系列_秀":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%A7%80.png","bilibili_热词系列_下次一定":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E4%B8%8B%E6%AC%A1%E4%B8%80%E5%AE%9A.png","bilibili_热词系列_我太南了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%88%91%E5%A4%AA%E5%8D%97%E4%BA%86.png","bilibili_热词系列_我酸了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%88%91%E9%85%B8%E4%BA%86.png","bilibili_热词系列_我全都要":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%88%91%E5%85%A8%E9%83%BD%E8%A6%81.png","bilibili_热词系列_完结撒花":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%AE%8C%E7%BB%93%E6%92%92%E8%8A%B1.png","bilibili_热词系列_神仙UP":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%A5%9E%E4%BB%99UP.png","bilibili_热词系列_三连":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E4%B8%89%E8%BF%9E.png","bilibili_热词系列_你币有了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E4%BD%A0%E5%B8%81%E6%9C%89%E4%BA%86.png","bilibili_热词系列_妙啊":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%A6%99%E5%95%8A.png","bilibili_热词系列_可以":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%8F%AF%E4%BB%A5.png","bilibili_热词系列_高产":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E9%AB%98%E4%BA%A7.png","bilibili_热词系列_大师球":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%A4%A7%E5%B8%88%E7%90%83.png","bilibili_热词系列_打卡":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%89%93%E5%8D%A1.png","bilibili_热词系列_锤":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E9%94%A4.png","bilibili_热词系列_吹爆":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%90%B9%E7%88%86.png","bilibili_热词系列_不愧是你":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E4%B8%8D%E6%84%A7%E6%98%AF%E4%BD%A0.png","bilibili_热词系列_奥力给":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%A5%A5%E5%8A%9B%E7%BB%99.png","bilibili_热词系列_AWSL":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_AWSL.png","bilibili_热词系列_狼火":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%8B%BC%E7%81%AB.png"},
-      enableQQ: true,
-      requiredFields: requiredFields,
-      tagMeta: ['博主','小伙伴','访客'],
-      master: ['02281bbee129756026da93b2870238aa'],
-      friends: ['341245080182f068c9f82ccf6b2bd963']
-    });
-  }
-  loadScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', initValine)
+//- 下面的那行小字 如果你不需要可以把17~21行注释掉</script><div id="copy" align="center">Rating addon based on<a herf="https://widgetpack.com/">widgetpack</a>, by<a href="https://bili33.top" target="_blank" rel="noopener">GamerNoTitle</a></div></body></html><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/cuixinyu/"><img class="next-cover" data-src="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/006.webp" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav><hr><div id="post-comment"><div class="comment-head"><div class="comment-headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Valine</span><label><input id="switch-comments-btn" type="checkbox"><span class="slider"></span></label><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div class="comments-items-1" data-name="Valine"><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
 }
 
-if ('Valine' === 'Valine' || true) {
-  window.addEventListener('load', loadvaline)
-}
-else {
-  function loadOtherComment () {
-    loadvaline()
-  }
-}</script></div><div class="comments-items-2" data-name="Gitalk"><div id="gitalk-container"></div><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><script>function loadGitalk () {
+var guestInfo = requestSetting(['nick','mail','link'],'昵称,邮箱,主页')
+var requiredFields = requestSetting(['nick','mail','link'],'nick,mail')
+let friends = '341245080182f068c9f82ccf6b2bd963'.split(',')
+let master = '02281bbee129756026da93b2870238aa'.split(',')
+let tagMeta = '博主,小伙伴,访客'.split(',')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'EKjUylH9GCB76iA10OpfLBbM-MdYXbMMI',
+  appKey: 'voOIFlyQzeOG3UDuSv9xQo86',
+  notify: false,
+  verify: true,
+  placeholder: '留下你的足迹吧（↑邮箱必填），你也可以在右上角切换Gitalk评论~',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-cn',
+  recordIP: 'true',
+  serverURLs: '',
+  emojiCDN: 'https://cdn.jsdelivr.net/gh/HCLonely/valine-face@1.0.1/',
+  emojiMaps: "",
+  enableQQ: true,
+  requiredFields: requiredFields,
+  master: master,
+  friends: friends,
+  tagMeta: tagMeta,
+  metaPlaceholder: {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"}
+});</script></div><div class="comments-items-2" data-name="Gitalk"><div id="gitalk-container"></div><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><script>function loadGitalk () {
   const ele = document.createElement('link')
   ele.rel = 'stylesheet'
   ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
