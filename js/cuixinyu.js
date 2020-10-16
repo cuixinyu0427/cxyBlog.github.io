@@ -54,90 +54,53 @@ $(function(){
 
     xiaokang.cheatTitle(["看不见我🙈~看不见我🙈~"], ["(°ー°〃) 被发现了~"], ["https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/img/avatar.png"], ["https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/img/avatar.png"]);
 
-    var botui = new BotUI('delivery-bot'),
-        address = 'House 1, First Ave.';
+    var loadingMsgIndex,
+        botui = new BotUI('stars-bot'),
+        API = 'https://api.github.com/repos/';
 
-    botui.message
-        .bot('Where would you like the package to be delivered?')
-        .then(function () {
-            return botui.action.button({
-                delay: 1000,
-                addMessage: false, // so we could the address in message instead if 'Existing Address'
-                action: [{
-                    text: 'Existing Address',
-                    value: 'exist'
-                }, {
-                    text: 'Add New Address',
-                    value: 'new'
-                }]
-            })
-        }).then(function (res) {
-        if(res.value == 'exist') {
-            botui.message.human({
-                delay: 500,
-                content: address
-            });
-            end();
-        } else {
-            botui.message.human({
-                delay: 500,
-                content: res.text
-            });
-            askAddress();
+    function sendXHR(repo, cb) {
+        var xhr = new XMLHttpRequest();
+        var self = this;
+        xhr.open('GET', API + repo);
+        xhr.onload = function () {
+            var res = JSON.parse(xhr.responseText)
+            cb(res.stargazers_count);
         }
-    });
+        xhr.send();
+    }
 
-    var askAddress = function () {
+    function init() {
         botui.message
             .bot({
-                delay: 500,
-                content: 'Please write your address below:'
+                delay: 1000,
+                content: 'Enter the repo name to see how many stars it have:'
             })
             .then(function () {
                 return botui.action.text({
                     delay: 1000,
                     action: {
-                        size: 30,
-                        icon: 'map-marker',
-                        value: address, // show the saved address if any
-                        placeholder: 'Address'
+                        value: 'moinism/botui',
+                        placeholder: 'moinism/botui'
                     }
                 })
             }).then(function (res) {
-            botui.message
-                .bot({
-                    delay: 500,
-                    content: 'New address: ' + res.value
-                });
-
-            address = res.value; // save address
-
-            return botui.action.button({
-                delay: 1000,
-                action: [{
-                    icon: 'check',
-                    text: 'Confirm',
-                    value: 'confirm'
-                }, {
-                    icon: 'pencil',
-                    text: 'Edit',
-                    value: 'edit'
-                }]
-            })
-        }).then(function (res) {
-            if(res.value == 'confirm') {
-                end();
-            } else {
-                askAddress();
-            }
+            loadingMsgIndex = botui.message.bot({
+                delay: 200,
+                loading: true
+            }).then(function (index) {
+                loadingMsgIndex = index;
+                sendXHR(res.value, showStars)
+            });
         });
     }
 
-    var end = function () {
+    function showStars(stars) {
         botui.message
-            .bot({
-                delay: 1000,
-                content: 'Thank you. Your package will shipped soon.'
-            });
+            .update(loadingMsgIndex, {
+                content: 'it has !(star) ' + (stars || "0") + ' stars.'
+            })
+            .then(init); // ask again for repo. Keep in loop.
     }
+
+    init();
 })
