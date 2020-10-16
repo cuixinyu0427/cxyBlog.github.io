@@ -54,5 +54,5 @@ $(function(){
 
     xiaokang.cheatTitle(["看不见我🙈~看不见我🙈~"], ["(°ー°〃) 被发现了~"], ["https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/img/avatar.png"], ["https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/img/avatar.png"]);
 
-    bot_ui_ini()
+    bot_ui_ini();
 })
