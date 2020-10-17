@@ -37,4 +37,4 @@ stars = {
     },
 }
 // 传入json文件的路径
-stars.init('./allStars.json')
+stars.init('/allStars.json')
