@@ -56,13 +56,4 @@ $(function(){
 
     bot_ui_ini();
 
-    var img = "https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/custom/cungudafa.jpg"; //说说旁边显示的头像
-    var appID = "J6HMdR55K35Up0HUCediIltU-MdYXbMMI";
-    var appKEY = "vjw9RFSVacKXzanWEoG8jnp5";
-    var per = "5"; //每页显示说说的数量
-    var username = "cuixinyu"; //Leancloud中设置的用户名
-    var placeholder1="只有cungudafa才能评论哦"; //在编辑说说的输入框中的占位符
-    var placeholder2="没有密码，不能评论！";  //在编辑密码的输入框中的占位符
-    var lazy = 1; //是否开启懒加载动画
-    var bgimg = "https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich16.gif"; //背景动画
 })
