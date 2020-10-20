@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>cxyBlog | cxyBlog</title><meta name="description" content="APlayer×Meting×JustAddMusic              .button.gray{ color: #8c96a0; text-shadow:1px 1px 1px #fff; border:1px solid #dce1e6;  background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec"><meta name="keywords" content="Vue,面试,CSDN,ES6,React,前端"><meta name="author" content="崔心宇"><meta name="copyright" content="崔心宇"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon1.png"><link rel="canonical" href="https://cuixinyu.icu/APlayer-Meting-JustAddMusic/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="google-site-verification" content="content"/><meta name="msvalidate.01" content="content"/><meta name="baidu-site-verification" content="content"/><meta property="og:type" content="website"><meta property="og:title" content="cxyBlog"><meta property="og:url" content="https://cuixinyu.icu/APlayer-Meting-JustAddMusic/"><meta property="og:site_name" content="cxyBlog"><meta property="og:description" content="APlayer×Meting×JustAddMusic              .button.gray{ color: #8c96a0; text-shadow:1px 1px 1px #fff; border:1px solid #dce1e6;  background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2020-10-19T14:40:49.706Z"><meta property="article:modified_time" content="2020-10-19T14:40:49.706Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: {"languages":{"author":"作者: 崔心宇","link":"链接: ","source":"来源: cxyBlog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"15px"},
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-10-19 22:40:49'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="referrer" content="no-referrer-when-downgrade" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/flink.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/css/iconfont.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/css/botui-theme-default.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/css/botui.min.css"><link rel="stylesheet" href="css/cover.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">2</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">4</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/bangumis/"><i class="fa-fw fab fa-youtube"></i><span> 番剧</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://cuixinyu0427.github.io/Mikutap/"><i class="fa-fw fa fa-gamepad"></i><span> Mikutap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/stars/"><i class="fa-fw fas fa-star"></i><span> 我的收藏</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/gallery/"><i class="fa-fw far fa-image"></i><span> 相册</span></a></li><li><a class="site-page" href="/home/"><i class="fa-fw fab fa-phoenix-framework"></i><span> 主页</span></a></li><li><a class="site-page" href="/box/"><i class="fa-fw fab fa-xbox"></i><span> 聚宝盒</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="http://101.200.181.227/"><i class="fa-fw far fa-image"></i><span> 私人图床</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://cuixinyu0427.github.io/uptimeStatusRevise/"><i class="fa-fw fa fa-flask"></i><span> 状态监控</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw far fa-comment"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heart"></i><span> 关于</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/me/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://cxyblog.avosapps.us/"><i class="fa-fw fa fa-lock"></i><span> Valine评论后台</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://console.leancloud.app/applist.html#/apps"><i class="fa-fw fa fa-lock"></i><span> LeanCloud应用后台</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://uptimerobot.com/login"><i class="fa-fw fa fa-lock"></i><span> UptimeRobot</span></a></li></ul></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><header class="not-index-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/img/2.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">cxyBlog</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/bangumis/"><i class="fa-fw fab fa-youtube"></i><span> 番剧</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://cuixinyu0427.github.io/Mikutap/"><i class="fa-fw fa fa-gamepad"></i><span> Mikutap</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/stars/"><i class="fa-fw fas fa-star"></i><span> 我的收藏</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/gallery/"><i class="fa-fw far fa-image"></i><span> 相册</span></a></li><li><a class="site-page" href="/home/"><i class="fa-fw fab fa-phoenix-framework"></i><span> 主页</span></a></li><li><a class="site-page" href="/box/"><i class="fa-fw fab fa-xbox"></i><span> 聚宝盒</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="http://101.200.181.227/"><i class="fa-fw far fa-image"></i><span> 私人图床</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://cuixinyu0427.github.io/uptimeStatusRevise/"><i class="fa-fw fa fa-flask"></i><span> 状态监控</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw far fa-comment"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heart"></i><span> 关于</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/me/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://cxyblog.avosapps.us/"><i class="fa-fw fa fa-lock"></i><span> Valine评论后台</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://console.leancloud.app/applist.html#/apps"><i class="fa-fw fa fa-lock"></i><span> LeanCloud应用后台</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://uptimerobot.com/login"><i class="fa-fw fa fa-lock"></i><span> UptimeRobot</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="page_site-info"><h1 id="site_title">cxyBlog</h1></div></header><main class="layout_page" id="content-inner"><div id="page"><div id="article-container"><!DOCTYPE html>
+<html lang="en">
+<head>
+     
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+   <title>APlayer×Meting×JustAddMusic</title>
+   <meta charset="UTF-8">
+<link rel="stylesheet" href="css/APlayer.min.css"/> 
+<link rel="stylesheet" href="css/justaddmusic.css"/> 
+<link rel="stylesheet" href="css/font-awesome.min.css"/> 
+
+<style>
+
+.button.gray{
+color: #8c96a0;
+text-shadow:1px 1px 1px #fff;
+border:1px solid #dce1e6;
+
+background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);
+background: -moz-linear-gradient(top,#f2f3f7,#e4e8ec);
+background: linear-gradient(top,#f2f3f7,#e4e8ec);
+padding:8px;
+}
+.jam-ui{
+color: #8c96a0;
+text-shadow:1px 1px 1px #fff;
+border:1px solid #dce1e6;
+
+background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);
+background: -moz-linear-gradient(top,#f2f3f7,#e4e8ec);
+background: linear-gradient(top,#f2f3f7,#e4e8ec);
+padding:2px;
+}
+</style>
+
+    <title>ZFE.ONE</title>
+</head>
+<body>
+<h2 style="margin:30px" align="center">  APlayer×Meting×JustAddMusic </h2>  
+
+<h5 align="center" >🍭 Wow, such a beautiful HTML5 music player with beautiful visualization!</h5>
+
+
+
+
+<h6 align="center">TOOL:&nbsp&nbsp&nbsp<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/MoePlayer/APlayer">APlayer</a>&nbsp&nbsp&nbsp<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/metowolf/MetingJS">MetingJS</a>&nbsp&nbsp&nbsp<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/gskinner/JustAddMusic">JustAddMusic</a> </h6>
+
+
+
+<!--<buttom type="button" class="btn-beautify button--animated outline black" id="musicvisualchange"   style="cursor:pointer" onclick="musicvisualchange()"><i class="far fa-hand-point-right fa-fw"></i>隐藏可视化</buttom>
+-->
+
+
+
+
+
+<div  style="margin:30px 280px 30px 280px" data-order="random"    class="aplayer bg-black" data-id="5249407673" data-server="netease" data-type="playlist"  data-volume="1.0"></div>
+
+
+
+<br>
+
+<div class="musiccontainer" id="container" style="position: fixed; right:0; bottom:0;"></div>
+
+<buttom  type="buttom" class="button gray" id="musicvisualchange"   style="cursor:pointer;margin-left:280px;" onclick="musicvisualchange()"><i class="fa fa-eye-slash"></i>&nbspHIDE</buttom>
+
+
+<script src="js/jquary.js"></script>
+<script src="js/APlayer.min.jam.js"></script>
+<script src="js/Meting.min.js"></script>
+<script src="js/JustAddMusic.js"></script>
+<script  src="js/jamsetting.js"></script>
+<script  src="js/visualupper.js"></script>
+<script src="js/visualchanger.js"></script>
+</body>
+</html></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Valine</span><label><input id="switch-comments-btn" type="checkbox"><span class="slider"></span></label><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div class="comments-items-1" data-name="Valine"><div class="vcomment" id="vcomment"></div><script>function loadvaline () {
+  var requestSetting = function (from,set) {
+    var from = from
+    var setting = set.split(',').filter(function(item){
+    return from.indexOf(item) > -1
+    });
+    setting = setting.length == 0 ? from :setting;
+    return setting
+  }
+
+  var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+  var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+
+  function initValine () {
+    window.valine = new Valine({
+      el:'#vcomment',
+      appId: 'kPalnr137L2hmnvHf09aDkbt-MdYXbMMI',
+      appKey: 'MkOKoYyhlkOvUC1a0pXhLThg',
+      placeholder: '留下你的足迹吧（↑邮箱必填），你也可以在右上角切换Gitalk评论~',
+      avatar: 'monsterid',
+      meta: guestInfo,
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: {"bili_tv_gif_黑人问号":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/黑人问号.gif","bili_tv_gif_抓狂":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/抓狂.gif","bili_tv_gif_再见":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/再见.gif","bili_tv_gif_晕":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/晕.gif","bili_tv_gif_疑问":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/疑问.gif","bili_tv_gif_斜眼笑":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/斜眼笑.gif","bili_tv_gif_笑哭":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/笑哭.gif","bili_tv_gif_无奈":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/无奈.gif","bili_tv_gif_委屈":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/委屈.gif","bili_tv_gif_微笑":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/微笑.gif","bili_tv_gif_吐血":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/吐血.gif","bili_tv_gif_偷笑":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/偷笑.gif","bili_tv_gif_思考":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/思考.gif","bili_tv_gif_睡着":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/睡着.gif","bili_tv_gif_生气":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/生气.gif","bili_tv_gif_生病":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/生病.gif","bili_tv_gif_色":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/色.gif","bili_tv_gif_亲亲":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/亲亲.gif","bili_tv_gif_呕吐":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/呕吐.gif","bili_tv_gif_难过":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/难过.gif","bili_tv_gif_腼腆":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/腼腆.gif","bili_tv_gif_流汗":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/流汗.gif","bili_tv_gif_流鼻血":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/流鼻血.gif","bili_tv_gif_困":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/困.gif","bili_tv_gif_抠鼻子":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/抠鼻子.gif","bili_tv_gif_可爱":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/可爱.gif","bili_tv_gif_惊吓":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/惊吓.gif","bili_tv_gif_坏笑":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/坏笑.gif","bili_tv_gif_害羞":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/害羞.gif","bili_tv_gif_鼓掌":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/鼓掌.gif","bili_tv_gif_尴尬":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/尴尬.gif","bili_tv_gif_发怒":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/发怒.gif","bili_tv_gif_发财":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/发财.gif","bili_tv_gif_调皮":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/调皮.gif","bili_tv_gif_点赞":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/点赞.gif","bili_tv_gif_呆":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/呆.gif","bili_tv_gif_大佬":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/大佬.gif","bili_tv_gif_大哭":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/大哭.gif","bili_tv_gif_打脸":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/打脸.gif","bili_tv_gif_馋":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/馋.gif","bili_tv_gif_闭嘴":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/闭嘴.gif","bili_tv_gif_鄙视":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/鄙视.gif","bili_tv_gif_白眼":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/白眼.gif","bili_tv_gif_doge":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/doge.gif","bilibili_热词系列_“狼火”":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E2%80%9C%E7%8B%BC%E7%81%AB%E2%80%9D.png","bilibili_热词系列_知识增加":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%9F%A5%E8%AF%86%E5%A2%9E%E5%8A%A0.png","bilibili_热词系列_张三":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%BC%A0%E4%B8%89.png","bilibili_热词系列_有内味了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%9C%89%E5%86%85%E5%91%B3%E4%BA%86.jpg","bilibili_热词系列_我裂开了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%88%91%E8%A3%82%E5%BC%80%E4%BA%86.png","bilibili_热词系列_我哭了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%88%91%E5%93%AD%E4%BA%86.jpg","bilibili_热词系列_问号":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E9%97%AE%E5%8F%B7.png","bilibili_热词系列_危":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%8D%B1.jpg","bilibili_热词系列_你细品":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E4%BD%A0%E7%BB%86%E5%93%81.jpg","bilibili_热词系列_猛男必看":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%8C%9B%E7%94%B7%E5%BF%85%E7%9C%8B.jpg","bilibili_热词系列_害":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%AE%B3.jpg","bilibili_热词系列_咕咕":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%92%95%E5%92%95.jpg","bilibili_热词系列_递话筒":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E9%80%92%E8%AF%9D%E7%AD%92.png","bilibili_热词系列_标准结局":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%A0%87%E5%87%86%E7%BB%93%E5%B1%80.png","bilibili_热词系列_爱了爱了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%88%B1%E4%BA%86%E7%88%B1%E4%BA%86.png","bilibili_热词系列_知识盲区":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%9F%A5%E8%AF%86%E7%9B%B2%E5%8C%BA.png","bilibili_热词系列_镇站之宝":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E9%95%87%E7%AB%99%E4%B9%8B%E5%AE%9D.png","bilibili_热词系列_真香":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%9C%9F%E9%A6%99.png","bilibili_热词系列_有生之年":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%9C%89%E7%94%9F%E4%B9%8B%E5%B9%B4.png","bilibili_热词系列_爷关更":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%88%B7%E5%85%B3%E6%9B%B4.png","bilibili_热词系列_秀":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%A7%80.png","bilibili_热词系列_下次一定":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E4%B8%8B%E6%AC%A1%E4%B8%80%E5%AE%9A.png","bilibili_热词系列_我太南了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%88%91%E5%A4%AA%E5%8D%97%E4%BA%86.png","bilibili_热词系列_我酸了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%88%91%E9%85%B8%E4%BA%86.png","bilibili_热词系列_我全都要":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%88%91%E5%85%A8%E9%83%BD%E8%A6%81.png","bilibili_热词系列_完结撒花":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%AE%8C%E7%BB%93%E6%92%92%E8%8A%B1.png","bilibili_热词系列_神仙UP":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%A5%9E%E4%BB%99UP.png","bilibili_热词系列_三连":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E4%B8%89%E8%BF%9E.png","bilibili_热词系列_你币有了":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E4%BD%A0%E5%B8%81%E6%9C%89%E4%BA%86.png","bilibili_热词系列_妙啊":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%A6%99%E5%95%8A.png","bilibili_热词系列_可以":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%8F%AF%E4%BB%A5.png","bilibili_热词系列_高产":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E9%AB%98%E4%BA%A7.png","bilibili_热词系列_大师球":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%A4%A7%E5%B8%88%E7%90%83.png","bilibili_热词系列_打卡":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E6%89%93%E5%8D%A1.png","bilibili_热词系列_锤":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E9%94%A4.png","bilibili_热词系列_吹爆":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%90%B9%E7%88%86.png","bilibili_热词系列_不愧是你":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E4%B8%8D%E6%84%A7%E6%98%AF%E4%BD%A0.png","bilibili_热词系列_奥力给":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E5%A5%A5%E5%8A%9B%E7%BB%99.png","bilibili_热词系列_AWSL":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_AWSL.png","bilibili_热词系列_狼火":"https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/%E7%83%AD%E8%AF%8D%E7%B3%BB%E5%88%97_%E7%8B%BC%E7%81%AB.png"},
+      enableQQ: true,
+      requiredFields: requiredFields,
+      tagMeta: ['博主','小伙伴','访客'],
+      master: ['02281bbee129756026da93b2870238aa'],
+      friends: ['341245080182f068c9f82ccf6b2bd963']
+    });
+  }
+  loadScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || true) {
+  window.addEventListener('load', loadvaline)
+}
+else {
+  function loadOtherComment () {
+    loadvaline()
+  }
+}</script></div><div class="comments-items-2" data-name="Gitalk"><div id="gitalk-container"></div><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><script>function loadGitalk () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+
+  loadScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js', function () {
+    var gitalk = new Gitalk({
+      clientID: '98585c81192a4815b9d9',
+      clientSecret: '8870ad3dc4e7dd88762c32f4699c6cb3481fdb88',
+      repo: 'gitalk.github.io',
+      owner: 'cuixinyu0427',
+      admin: ['cuixinyu0427'],
+      id: md5(decodeURI(location.pathname)),
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: true,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  })
+
+  function commentCount(n){
+    try {
+      document.getElementsByClassName('gitalk-comment-count')[0].innerHTML= n
+    } catch (e) {
+      return false
+    }
+  }
+}
+
+if ('Valine' === 'Gitalk' || true) {
+  window.addEventListener('load', loadGitalk)
+}
+else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/cuixinyu0427/cdn/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">崔心宇</div><div class="author-info__description">不是只会写业务代码的全栈程序员！</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">2</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">4</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">1</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" type="button" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/cuixinyu0427" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:524000363@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/84396655" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="iconfont icon-bilibili1"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">针不戳<img src="https://cdn.jsdelivr.net/gh/lete114/CDN/Use/my_bg.gif"></div></div></div><div class="card-widget card-pixiv"><div class="card-content"><div class="item-headline"><i class="fa fa-image" aria-hidden="true"></i><span>Pixiv日榜Top50</span><iframe src="https://cloud.mokeyjay.com/pixiv" frameborder="0" style="width:99%;height:380px;margin:0;"></iframe></div></div></div><div class="card-widget card-calendar"><div class="card-content"><div class="item-headline"><i class="far fa-calendar-alt" aria-hidden="true"></i><span>写作日历</span></div><div class="widget-wrap"></div><div class="widget" id="calendar"></div></div></div><div class="card-widget card-map"><div class="card-content"><div class="item-headline"><i class="fa fa-globe-asia" aria-hidden="true"></i><span>访客地图</span></div><script id="clstr_globe" type="text/javascript" defer="defer" src="//clustrmaps.com/globe.js?d=z5GOI1AtcT-_fyDpKO_Mc5X6OrWwq79ZzaP5rys71pI"></script></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/archives/3610a686.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://cdn.jsdelivr.net/gh/chocolate1999/cdn/img/20200610151531.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="hello" alt="hello"/></div><div class="aside-post-title"><div class="aside-post_title" href="/archives/3610a686.html" title="hello">hello</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-10 12:00:00">2020-10-10</time></div></a></div><div class="aside-recent-post"><a href="/archives/4a17b156.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/006.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Hello World" alt="Hello World"/></div><div class="aside-post-title"><div class="aside-post_title" href="/archives/4a17b156.html" title="Hello World">Hello World</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-09 08:00:00">2020-10-09</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/blog/"><span class="card-category-list-name">blog</span><span class="card-category-list-count">2</span></a></li>
+                       
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href='/tags/blog/' style='font-size:21px; color:rgb(33, 60, 120)'>blog</a><a href='/tags/%E6%80%BB%E7%BB%93/' style='font-size:18px; color:rgb(26, 37, 20)'>总结</a><a href='/tags/%E6%B5%8B%E8%AF%95/' style='font-size:17px; color:rgb(157, 167, 106)'>测试</a><a href='/tags/%E7%AC%AC%E4%B8%80/' style='font-size:19px; color:rgb(26, 2, 191)'>第一</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">2</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">2</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" publish_date="8/29/2020 00:00:00">     </div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">77</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020  <i id="heartbeat" class="fa fas fa-heartbeat"></i> 崔心宇</div><div class="framework-info"><span>驱动 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="icp"><a target="_blank" rel="noopener external nofollow noreferrer" href="http://beian.miit.gov.cn/"><img class="icp-icon" src="/img/icp.png"/><span>辽ICP备2020012648号</span></a></div></div><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></head></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/third-party/click_heart.js"></script><script src="/js/third-party/ClickShowText.js"></script><script src="/js/xkTool.js"></script><script src="/js/cuixinyu.js"></script><script src="/js/calendar.js"></script><script src="/js/languages.js"></script><script src="//code.tidio.co/avyzfhm423zkzwrd3gzp3kpdtlyhkcdm.js" async></script><script src="/js/botui.js"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":120,"height":260},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
