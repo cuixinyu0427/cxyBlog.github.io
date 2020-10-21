@@ -23,14 +23,10 @@
     <published>2020-10-10T04:00:00.000Z</published>
     <updated>2020-10-18T03:38:03.067Z</updated>
     
-    <content type="html"><![CDATA[<p>sss</p><h2 id="123"><a href="#123" class="headerlink" title="123"></a>123</h2><h3 id="456"><a href="#456" class="headerlink" title="456"></a>456</h3>]]></content>
+    <content type="html"><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <div class="hbe-input-container">  <input type="password" id="hbePass" placeholder="" />    <label for="hbePass">Hey, password is required here.</label>    <div class="bottom-line"></div>  </div>  <script id="hbeData" type="hbeData" data-hmacdigest="1fc584c07e46c83f35e7690ba1ca37a058b22e239d623d3c177c678effbf6f20">af986fef8e8797b22dead0907a2b81a4727dcf06fde29d15d4d5dacda0184fb20021fa868e9302d2ad6d36b70ed2445d8327405eca58ac59fe02a8991e4734c13a3da9341d3d696bd8efc306539aab2222d9d5852c1a770eeb354e80d471e6e632d7e6b69dc85a630885d923ef29e420f32bf62d56462088c878165831a642bd159b0b7ff34880b3f5db6e27db48f88501e747f6e6b621e39988dfa768aaca32</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
     
     
-      
-      
-    <summary type="html">&lt;p&gt;sss&lt;/p&gt;
-&lt;h2 id=&quot;123&quot;&gt;&lt;a href=&quot;#123&quot; class=&quot;headerlink&quot; title=&quot;123&quot;&gt;&lt;/a&gt;123&lt;/h2&gt;&lt;h3 id=&quot;456&quot;&gt;&lt;a href=&quot;#456&quot; class=&quot;headerlink&quot; title=&quot;456&quot;</summary>
-      
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
     
     
     
@@ -66,6 +62,25 @@
     <category term="总结" scheme="https://cuixinyu.icu/tags/%E6%80%BB%E7%BB%93/"/>
     
     <category term="blog" scheme="https://cuixinyu.icu/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://cuixinyu.icu/archives/d87f7e0c.html"/>
+    <id>https://cuixinyu.icu/archives/d87f7e0c.html</id>
+    <published>2020-03-13T13:12:21.000Z</published>
+    <updated>2020-10-21T06:25:35.951Z</updated>
+    
+    <content type="html"><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉，这个密码看着不太对，请再试试。" data-whm="抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。">  <div class="hbe-input-container">  <input type="password" id="hbePass" placeholder="" />    <label for="hbePass">您好，这里需要密码。</label>    <div class="bottom-line"></div>  </div>  <script id="hbeData" type="hbeData" data-hmacdigest="1fc584c07e46c83f35e7690ba1ca37a058b22e239d623d3c177c678effbf6f20">af986fef8e8797b22dead0907a2b81a4727dcf06fde29d15d4d5dacda0184fb20021fa868e9302d2ad6d36b70ed2445d8327405eca58ac59fe02a8991e4734c13a3da9341d3d696bd8efc306539aab2222d9d5852c1a770eeb354e80d471e6e632d7e6b69dc85a630885d923ef29e420f32bf62d56462088c878165831a642bd159b0b7ff34880b3f5db6e27db48f88501e747f6e6b621e39988dfa768aaca32</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <summary type="html">这里有东西被加密了，需要输入密码查看哦。</summary>
+    
+    
+    
+    
+    <category term="加密文章tag" scheme="https://cuixinyu.icu/tags/%E5%8A%A0%E5%AF%86%E6%96%87%E7%AB%A0tag/"/>
     
   </entry>
   
