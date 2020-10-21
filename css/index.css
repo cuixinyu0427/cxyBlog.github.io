@@ -4582,6 +4582,13 @@ img {
 #article-container .aplayer {
   margin: 0 0 1rem;
 }
+@media screen and (max-width: 1024px) {
+  .pet {
+    background-image: url("/images/pet.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+}
 #article-container .btn-center {
   margin: 0 0 1rem;
   text-align: center;
